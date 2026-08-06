@@ -23,6 +23,10 @@ pip install -r requirements.txt
 export OPENAI_API_KEY=sk-...
 ```
 
+`data/` (~880MB) is not tracked in this git repo — download it separately from
+**[PLACEHOLDER: data download link]** and extract it to `data/` at the repo
+root. See [`data/README.md`](data/README.md) for the full layout.
+
 All scripts are invoked as modules from the repo root (`python -m package.script ...`),
 since they use relative/package-local imports.
 
@@ -71,6 +75,7 @@ python -m scoring.get_scores --root_dir data
 
 ```
 data/          VITALERRORS dataset (queries, responses, and cached pipeline outputs)
+               -- not in git, download separately (see Quickstart / data/README.md)
 factscore/     FactScore-style claim decomposition + verification (OpenAI backend)
 nuggetizer/    Nugget extraction/scoring/assignment (AutoNuggetizer, vendored + trimmed)
 vital/         The paper's core contribution: importance-weighted precision/recall

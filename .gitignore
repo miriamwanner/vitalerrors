@@ -7,4 +7,7 @@ __pycache__/
 
 # VITALERRORS dataset (~880MB) -- too large for a normal git repo / exceeds
 # GitHub's file-size limits. Hosted separately -- see data/README.md.
-/data/
+# (Excluding contents rather than the directory itself, so the negation
+# below can still track data/README.md.)
+/data/*
+!/data/README.md
