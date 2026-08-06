@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subclaim Importance Annotation Tool</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; color: #333; font-size: 14px; }
+
+.container { max-width: 960px; margin: 0 auto; padding: 16px; }
+
+header { background: #1a2332; color: white; padding: 14px 18px; border-radius: 8px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+header h1 { font-size: 1.1rem; font-weight: 600; }
+#progress-text { font-size: 0.85rem; opacity: 0.75; }
+
+/* Load screen */
+#load-section { background: white; padding: 40px; border-radius: 8px; text-align: center; border: 2px dashed #d0d7de; }
+#load-section p { color: #666; margin-bottom: 20px; }
+.btn { padding: 9px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 0.88rem; font-weight: 600; transition: filter 0.1s; }
+.btn:hover { filter: brightness(0.92); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: #0969da; color: white; }
+.btn-secondary { background: #6e7781; color: white; }
+.btn-success { background: #1a7f37; color: white; }
+.btn-purple { background: #8250df; color: white; }
+.btn-danger { background: #cf222e; color: white; }
+#file-input { display: none; }
+
+/* Main annotation area */
+#annotation-area { display: none; }
+
+.card { background: white; border-radius: 8px; padding: 16px; margin-bottom: 14px; border: 1px solid #d0d7de; }
+
+.query-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #57606a; margin-bottom: 5px; }
+.query-text { font-size: 0.95rem; font-weight: 600; color: #1a2332; margin-bottom: 12px; }
+.response-text { font-size: 0.88rem; color: #444; line-height: 1.55; padding: 10px 12px; background: #f6f8fa; border-radius: 6px; border-left: 3px solid #0969da; max-height: 160px; overflow-y: auto; }
+
+/* Subclaim list */
+.subclaims-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.subclaims-header h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #57606a; }
+.legend { display: flex; gap: 8px; font-size: 0.75rem; }
+.legend-item { display: flex; align-items: center; gap: 4px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+
+#subclaims-list { user-select: none; }
+
+.subclaim-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 9px 10px; background: #fff;
+    border: 1.5px solid #d0d7de; border-radius: 6px; margin-bottom: 7px;
+    transition: box-shadow 0.1s, border-color 0.1s;
+}
+.subclaim-item.dragging { opacity: 0.4; }
+.subclaim-item.drag-over { border-color: #0969da; background: #ddf4ff; }
+.subclaim-item.labeled-vital { border-left: 4px solid #cf222e; }
+.subclaim-item.labeled-okay { border-left: 4px solid #bf8700; }
+.subclaim-item.labeled-less { border-left: 4px solid #1a7f37; }
+
+.drag-handle { cursor: grab; color: #c0c7cf; font-size: 1.1rem; flex-shrink: 0; padding-top: 1px; line-height: 1; }
+.drag-handle:active { cursor: grabbing; }
+.rank-num { font-size: 0.75rem; font-weight: 700; color: #aaa; width: 20px; flex-shrink: 0; padding-top: 3px; text-align: center; }
+.subclaim-id { font-family: monospace; font-weight: 700; color: #666; font-size: 0.8rem; flex-shrink: 0; padding-top: 2px; min-width: 28px; }
+.subclaim-text { flex: 1; font-size: 0.88rem; line-height: 1.45; color: #24292f; }
+.subclaim-sentence { font-size: 0.75rem; color: #888; margin-top: 3px; font-style: italic; }
+
+.label-btns { display: flex; gap: 4px; flex-shrink: 0; }
+.label-btn {
+    padding: 3px 9px; border: 1.5px solid transparent; border-radius: 4px;
+    cursor: pointer; font-size: 0.73rem; font-weight: 700;
+    opacity: 0.35; transition: opacity 0.1s;
+    background: transparent;
+}
+.label-btn.active { opacity: 1; }
+.label-btn.vital { border-color: #cf222e; color: #cf222e; }
+.label-btn.vital.active { background: #cf222e; color: white; }
+.label-btn.okay { border-color: #bf8700; color: #bf8700; }
+.label-btn.okay.active { background: #bf8700; color: white; }
+.label-btn.less { border-color: #1a7f37; color: #1a7f37; }
+.label-btn.less.active { background: #1a7f37; color: white; }
+.label-btn:hover { opacity: 0.75; }
+.label-btn.active:hover { opacity: 0.85; }
+
+/* Navigation */
+.nav-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.nav-center { display: flex; align-items: center; gap: 8px; }
+#annotation-status { font-size: 0.82rem; color: #57606a; }
+.status-complete { color: #1a7f37; font-weight: 600; }
+
+/* Sentence grouping (collapsed by default) */
+.sentence-group { margin-bottom: 4px; }
+.sentence-label { font-size: 0.73rem; color: #999; padding: 2px 6px; margin-bottom: 3px; display: inline-block; }
+
+/* Jump to instance */
+.nav-jump { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; }
+.nav-jump input { width: 55px; padding: 5px 8px; border: 1px solid #d0d7de; border-radius: 5px; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+    <h1>Subclaim Importance Annotation Tool</h1>
+    <div id="progress-text">No file loaded</div>
+</header>
+
+<!-- Load screen -->
+<div id="load-section" class="card">
+    <p>Load a JSONL file (normal.jsonl, missing.jsonl, or wrong.jsonl).<br>
+    Subclaims will be shown in their <strong>original response order</strong>.<br>
+    Drag to reorder, click labels to assign importance. Progress auto-saves in browser.</p>
+    <div style="display:flex; gap:10px; justify-content:center; margin-top:20px; flex-wrap:wrap;">
+        <label class="btn btn-primary" for="file-input">Load JSONL File</label>
+        <input type="file" id="file-input" accept=".jsonl,.json">
+        <button class="btn btn-secondary" onclick="loadSavedAnnotations()">Load Saved Annotations (.json)</button>
+    </div>
+</div>
+
+<!-- Annotation area -->
+<div id="annotation-area">
+
+    <div class="card">
+        <div class="query-label">Query</div>
+        <div class="query-text" id="query-display"></div>
+        <div class="query-label" style="margin-top:10px;">Response</div>
+        <div class="response-text" id="response-display"></div>
+    </div>
+
+    <div class="card">
+        <div class="subclaims-header">
+            <h3>Subclaims — drag to rank, click to label</h3>
+            <div style="display:flex; align-items:center; gap:12px;">
+                <button class="btn btn-secondary" onclick="groupByLabel()" style="font-size:0.78rem; padding:5px 12px;" title="Sort into vital → okay → less-important, preserving relative order within each group">Group by label</button>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-dot" style="background:#cf222e"></div>vital</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#bf8700"></div>okay</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#1a7f37"></div>less-important</div>
+                </div>
+            </div>
+        </div>
+        <div id="subclaims-list"></div>
+    </div>
+
+    <div class="card nav-row">
+        <button class="btn btn-secondary" id="prev-btn" onclick="navigate(-1)">← Previous</button>
+
+        <div class="nav-center">
+            <div id="annotation-status"></div>
+            <button class="btn btn-success" onclick="saveProgress()">Save Progress</button>
+            <button class="btn btn-purple" onclick="exportAnnotations()">Export JSONL</button>
+        </div>
+
+        <button class="btn btn-primary" id="next-btn" onclick="navigate(1)">Next →</button>
+    </div>
+
+    <div class="card" style="display:flex; align-items:center; gap:10px; padding:10px 16px; font-size:0.85rem;">
+        <span style="color:#57606a;">Jump to instance:</span>
+        <div class="nav-jump">
+            <input type="number" id="jump-input" min="1" placeholder="1">
+            <button class="btn btn-secondary" onclick="jumpTo()">Go</button>
+        </div>
+        <span style="color:#aaa; margin-left:10px; font-size:0.8rem;">Tip: Use ← → arrow keys to navigate</span>
+    </div>
+
+</div>
+</div>
+
+<script>
+let instances = [];
+let annotations = {};  // { instanceIdx: { order: [sid, ...], labels: {sid: label} } }
+let currentIdx = 0;
+let filename = '';
+
+// ── File loading ──────────────────────────────────────────────────────────────
+
+document.getElementById('file-input').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    filename = file.name.replace(/\.[^.]+$/, '');
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+        const lines = ev.target.result.trim().split('\n').filter(l => l.trim());
+        instances = lines.map(l => JSON.parse(l));
+        // Check for existing localStorage annotations
+        const saved = localStorage.getItem('annot_' + filename);
+        if (saved) {
+            const parsed = JSON.parse(saved);
+            const count = Object.keys(parsed).length;
+            if (count > 0 && confirm(`Found ${count} saved annotations for "${filename}" in browser storage. Restore them?`)) {
+                annotations = parsed;
+            } else {
+                annotations = {};
+            }
+        } else {
+            annotations = {};
+        }
+        currentIdx = 0;
+        showAnnotationArea();
+        renderInstance();
+    };
+    reader.readAsText(file);
+});
+
+function loadSavedAnnotations() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+            try {
+                annotations = JSON.parse(ev.target.result);
+                if (instances.length > 0) {
+                    renderInstance();
+                    updateProgress();
+                    alert('Annotations loaded.');
+                } else {
+                    alert('Annotations loaded. Please also load your JSONL data file.');
+                }
+            } catch {
+                alert('Could not parse the JSON file.');
+            }
+        };
+        reader.readAsText(file);
+    };
+    input.click();
+}
+
+function showAnnotationArea() {
+    document.getElementById('load-section').style.display = 'none';
+    document.getElementById('annotation-area').style.display = 'block';
+}
+
+// ── Instance rendering ────────────────────────────────────────────────────────
+
+function getOriginalOrder(inst) {
+    // Returns subclaims in the order they appear in decomposition (original response order)
+    const result = [];
+    for (const sent of inst.decomposition) {
+        for (const atom of sent.decomp) {
+            result.push({ id: atom.id, text: atom.text, sentence: sent.sentence });
+        }
+    }
+    return result;
+}
+
+function renderInstance() {
+    const inst = instances[currentIdx];
+    document.getElementById('query-display').textContent = inst.query;
+    document.getElementById('response-display').textContent = inst.response.text;
+
+    const ann = annotations[currentIdx] || {};
+    // Show subclaims in annotation order if one exists, else original order
+    const originalSubclaims = getOriginalOrder(inst);
+    const idToSubclaim = {};
+    for (const s of originalSubclaims) idToSubclaim[s.id] = s;
+
+    const order = ann.order || originalSubclaims.map(s => s.id);
+    const labels = ann.labels || {};
+
+    const list = document.getElementById('subclaims-list');
+    list.innerHTML = '';
+
+    order.forEach((sid, rankIdx) => {
+        const s = idToSubclaim[sid];
+        if (!s) return;
+        const label = labels[sid] || '';
+        const borderClass = label === 'vital' ? 'labeled-vital' : label === 'okay' ? 'labeled-okay' : label === 'less-important' ? 'labeled-less' : '';
+
+        const item = document.createElement('div');
+        item.className = 'subclaim-item ' + borderClass;
+        item.draggable = true;
+        item.dataset.id = sid;
+
+        item.innerHTML =
+            `<span class="drag-handle" title="Drag to reorder">⠿</span>` +
+            `<span class="rank-num">${rankIdx + 1}</span>` +
+            `<span class="subclaim-id">${escHtml(sid)}</span>` +
+            `<div style="flex:1">` +
+                `<div class="subclaim-text">${escHtml(s.text)}</div>` +
+            `</div>` +
+            `<div class="label-btns">` +
+                `<button class="label-btn vital${label === 'vital' ? ' active' : ''}" data-sid="${sid}" data-label="vital">vital</button>` +
+                `<button class="label-btn okay${label === 'okay' ? ' active' : ''}" data-sid="${sid}" data-label="okay">okay</button>` +
+                `<button class="label-btn less${label === 'less-important' ? ' active' : ''}" data-sid="${sid}" data-label="less-important">less</button>` +
+            `</div>`;
+
+        // Label button clicks
+        item.querySelectorAll('.label-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                setLabel(this.dataset.sid, this.dataset.label);
+            });
+        });
+
+        setupDrag(item);
+        list.appendChild(item);
+    });
+
+    updateAnnotationStatus();
+    document.getElementById('prev-btn').disabled = currentIdx === 0;
+    document.getElementById('next-btn').disabled = currentIdx === instances.length - 1;
+    document.getElementById('jump-input').value = currentIdx + 1;
+    updateProgress();
+}
+
+// ── Drag and drop ─────────────────────────────────────────────────────────────
+
+let dragSrc = null;
+
+function setupDrag(item) {
+    item.addEventListener('dragstart', function(e) {
+        dragSrc = this;
+        this.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+    });
+    item.addEventListener('dragend', function() {
+        this.classList.remove('dragging');
+        document.querySelectorAll('.subclaim-item').forEach(i => i.classList.remove('drag-over'));
+        dragSrc = null;
+        commitOrder();
+    });
+    item.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        if (dragSrc && this !== dragSrc) {
+            document.querySelectorAll('.subclaim-item').forEach(i => i.classList.remove('drag-over'));
+            this.classList.add('drag-over');
+        }
+    });
+    item.addEventListener('drop', function(e) {
+        e.preventDefault();
+        if (dragSrc && this !== dragSrc) {
+            const list = document.getElementById('subclaims-list');
+            const items = [...list.querySelectorAll('.subclaim-item')];
+            const srcIdx = items.indexOf(dragSrc);
+            const dstIdx = items.indexOf(this);
+            if (srcIdx < dstIdx) {
+                this.after(dragSrc);
+            } else {
+                this.before(dragSrc);
+            }
+            // Update rank numbers immediately
+            list.querySelectorAll('.subclaim-item').forEach((item, i) => {
+                item.querySelector('.rank-num').textContent = i + 1;
+            });
+        }
+    });
+}
+
+function commitOrder() {
+    const order = [...document.querySelectorAll('.subclaim-item')].map(i => i.dataset.id);
+    if (!annotations[currentIdx]) annotations[currentIdx] = { labels: {} };
+    annotations[currentIdx].order = order;
+    autoSave();
+    updateAnnotationStatus();
+}
+
+function groupByLabel() {
+    // Read current DOM order and current labels
+    const items = [...document.querySelectorAll('.subclaim-item')];
+    const labels = (annotations[currentIdx] || {}).labels || {};
+
+    const buckets = { vital: [], okay: [], 'less-important': [], unlabeled: [] };
+    for (const item of items) {
+        const sid = item.dataset.id;
+        const label = labels[sid];
+        if (label && buckets[label]) buckets[label].push(item);
+        else buckets.unlabeled.push(item);
+    }
+
+    const list = document.getElementById('subclaims-list');
+    for (const item of [...buckets.vital, ...buckets.okay, ...buckets['less-important'], ...buckets.unlabeled]) {
+        list.appendChild(item);
+    }
+
+    // Update rank numbers
+    list.querySelectorAll('.subclaim-item').forEach((item, i) => {
+        item.querySelector('.rank-num').textContent = i + 1;
+    });
+
+    commitOrder();
+}
+
+// ── Labels ────────────────────────────────────────────────────────────────────
+
+function setLabel(sid, label) {
+    // Commit current DOM order first
+    const order = [...document.querySelectorAll('.subclaim-item')].map(i => i.dataset.id);
+    if (!annotations[currentIdx]) annotations[currentIdx] = { labels: {} };
+    annotations[currentIdx].order = order;
+    if (!annotations[currentIdx].labels) annotations[currentIdx].labels = {};
+    annotations[currentIdx].labels[sid] = label;
+    autoSave();
+    renderInstance();
+}
+
+// ── Persistence ───────────────────────────────────────────────────────────────
+
+function autoSave() {
+    if (filename) {
+        try {
+            localStorage.setItem('annot_' + filename, JSON.stringify(annotations));
+        } catch (e) {
+            // localStorage full — silently ignore, user can use Save Progress
+        }
+    }
+}
+
+function saveProgress() {
+    commitOrder();
+    const blob = new Blob([JSON.stringify(annotations, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = (filename || 'annotations') + '_progress.json';
+    a.click();
+}
+
+// ── Export ────────────────────────────────────────────────────────────────────
+
+function exportAnnotations() {
+    commitOrder();
+    if (!instances.length) { alert('No data loaded.'); return; }
+
+    const lines = instances.map((inst, i) => {
+        const ann = annotations[i] || {};
+        const originalSubclaims = getOriginalOrder(inst);
+        const order = ann.order || originalSubclaims.map(s => s.id);
+        const labels = ann.labels || {};
+
+        // Build decomposition with human labels (where available)
+        const newDecomp = inst.decomposition.map(sent => ({
+            sentence: sent.sentence,
+            decomp: sent.decomp.map(atom => ({
+                id: atom.id,
+                text: atom.text,
+                judgment: atom.judgment,
+                importance: labels[atom.id] || null  // null = unannotated
+            }))
+        }));
+
+        return JSON.stringify({
+            query: inst.query,
+            response: inst.response,
+            decomposition: newDecomp,
+            'subclaim-importance-order': order,
+            'annotated': Object.keys(labels).length > 0
+        });
+    });
+
+    const annotatedCount = lines.filter((_, i) => annotations[i] && Object.keys(annotations[i].labels || {}).length > 0).length;
+    const blob = new Blob([lines.join('\n') + '\n'], { type: 'application/x-ndjson' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = (filename || 'data') + '_human-annotated.jsonl';
+    a.click();
+    console.log(`Exported ${annotatedCount}/${instances.length} fully annotated instances.`);
+}
+
+// ── Navigation ────────────────────────────────────────────────────────────────
+
+function navigate(delta) {
+    commitOrder();
+    currentIdx = Math.max(0, Math.min(instances.length - 1, currentIdx + delta));
+    renderInstance();
+}
+
+function jumpTo() {
+    const val = parseInt(document.getElementById('jump-input').value, 10);
+    if (isNaN(val)) return;
+    commitOrder();
+    currentIdx = Math.max(0, Math.min(instances.length - 1, val - 1));
+    renderInstance();
+}
+
+document.addEventListener('keydown', function(e) {
+    if (!instances.length) return;
+    if (e.target.tagName === 'INPUT') return;
+    if (e.key === 'ArrowRight' && currentIdx < instances.length - 1) navigate(1);
+    if (e.key === 'ArrowLeft' && currentIdx > 0) navigate(-1);
+});
+
+// ── Status ────────────────────────────────────────────────────────────────────
+
+function updateProgress() {
+    const annotated = Object.values(annotations).filter(a => a.order && Object.keys(a.labels || {}).length > 0).length;
+    document.getElementById('progress-text').textContent =
+        `Instance ${currentIdx + 1} / ${instances.length}  ·  ${annotated} fully annotated`;
+}
+
+function updateAnnotationStatus() {
+    if (!instances.length) return;
+    const inst = instances[currentIdx];
+    const totalSubclaims = getOriginalOrder(inst).length;
+    const ann = annotations[currentIdx] || {};
+    const labeled = Object.keys(ann.labels || {}).length;
+    const hasOrder = ann.order ? true : false;
+
+    let html = `${labeled}/${totalSubclaims} labeled`;
+    if (hasOrder) html += ' · custom order saved';
+    if (labeled === totalSubclaims) html = `<span class="status-complete">✓ Complete</span>`;
+    document.getElementById('annotation-status').innerHTML = html;
+}
+
+// ── Utilities ─────────────────────────────────────────────────────────────────
+
+function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
+</body>
+</html>

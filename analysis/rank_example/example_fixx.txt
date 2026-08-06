@@ -1,0 +1,110 @@
+======================= NORMAL =======================
+S1	less-important	"One Thing Leads to Another" is a song.
+S2	vital	The song "One Thing Leads to Another" is performed by The Fixx.
+S3	okay	The Fixx is a band.
+S4	okay	The Fixx is a British band.
+S5	okay	The Fixx is a new wave band.
+S6	less-important	The song was released in 1983.
+S7	less-important	It became one of their most popular hits.
+S8	less-important	It became one of their most recognizable hits.
+S9	less-important	The song was featured on their album Reach the Beach.
+S10	less-important	The track showcases the band's signature blend of synthesizers.
+S11	less-important	The track showcases the band's signature blend of guitar-driven melodies.
+S12	less-important	The track features socially conscious lyrics.
+S13	less-important	The socially conscious lyrics are delivered by lead vocalist Cy Curnin.
+S14	okay	Cy Curnin is the band's lead vocalist.
+S15	less-important	The song achieved significant success in the United States.
+S16	less-important	The song reached the top 10 on the Billboard Hot 100 chart.
+S17	less-important	The song helped to solidify The Fixx's presence in the 1980s music scene.
+S18	less-important	The Fixx had a presence in the 1980s music scene.
+
+S2	vital	The song "One Thing Leads to Another" is performed by The Fixx.
+S3	okay	The Fixx is a band.
+S4	okay	The Fixx is a British band.
+S5	okay	The Fixx is a new wave band.
+S14	okay	Cy Curnin is the band's lead vocalist.
+S1	less-important	"One Thing Leads to Another" is a song.
+S6	less-important	The song was released in 1983.
+S7	less-important	It became one of their most popular hits.
+S8	less-important	It became one of their most recognizable hits.
+S9	less-important	The song was featured on their album Reach the Beach.
+S10	less-important	The track showcases the band's signature blend of synthesizers.
+S11	less-important	The track showcases the band's signature blend of guitar-driven melodies.
+S12	less-important	The track features socially conscious lyrics.
+S13	less-important	The socially conscious lyrics are delivered by lead vocalist Cy Curnin.
+S15	less-important	The song achieved significant success in the United States.
+S16	less-important	The song reached the top 10 on the Billboard Hot 100 chart.
+S17	less-important	The song helped to solidify The Fixx's presence in the 1980s music scene.
+S18	less-important	The Fixx had a presence in the 1980s music scene.
+
+======================= MISSING =======================
+S1	okay	It was released in 1983.
+S2	okay	It became one of the most popular hits.
+S3	okay	It became one of the most recognizable hits.
+S4	okay	It was featured on the album Reach the Beach.
+S5	less-important	The track showcases a blend of synthesizers.
+S6	less-important	The track showcases guitar-driven melodies.
+S7	less-important	The track showcases socially conscious lyrics.
+S8	vital	The socially conscious lyrics are delivered by the lead vocalist.
+S9	less-important	The track showcases a blend of synthesizers and guitar-driven melodies.
+S10	vital	The track showcases a blend of elements along with socially conscious lyrics delivered by the lead vocalist.
+S11	okay	The song achieved significant success in the United States.
+S12	okay	The song reached the top 10 on the Billboard Hot 100 chart.
+S13	okay	The song helped to solidify a presence in the 1980s music scene.
+
+S10	vital	The track showcases a blend of elements along with socially conscious lyrics delivered by the lead vocalist.
+S8	vital	The socially conscious lyrics are delivered by the lead vocalist.
+S4	okay	It was featured on the album Reach the Beach.
+S1	okay	It was released in 1983.
+S2	okay	It became one of the most popular hits.
+S3	okay	It became one of the most recognizable hits.
+S11	okay	The song achieved significant success in the United States.
+S12	okay	The song reached the top 10 on the Billboard Hot 100 chart.
+S13	okay	The song helped to solidify a presence in the 1980s music scene.
+S5	less-important	The track showcases a blend of synthesizers.
+S6	less-important	The track showcases guitar-driven melodies.
+S7	less-important	The track showcases socially conscious lyrics.
+S9	less-important	The track showcases a blend of synthesizers and guitar-driven melodies.
+
+======================= WRONG =======================
+S1	okay	"One Thing Leads to Another" is a song.
+S2	vital	"One Thing Leads to Another" is performed by a band.
+S3	vital	"One Thing Leads to Another" is performed by the American rock band The Cars.
+S4	less-important	The Cars is an American rock band.
+S5	okay	It was released in 1983.
+S6	okay	It became one of their most popular hits.
+S7	okay	It became one of their most recognizable hits.
+S8	okay	It was featured on their album Reach the Beach.
+S9	less-important	Reach the Beach is their album.
+S10	less-important	The track showcases the band's signature blend.
+S11	less-important	The band's signature blend includes synthesizers.
+S12	less-important	The band's signature blend includes guitar-driven melodies.
+S13	less-important	The track includes socially conscious lyrics.
+S14	less-important	The socially conscious lyrics are delivered by the lead vocalist.
+S15	less-important	Cy Curnin is the lead vocalist.
+S16	less-important	The socially conscious lyrics are delivered by Cy Curnin.
+S17	okay	The song achieved significant success in the United States.
+S18	okay	The song reached the top 10 on the Billboard Hot 100 chart.
+S19	vital	The song helped to solidify The Fixx's presence in the 1980s music scene.
+S20	less-important	The Fixx had a presence in the 1980s music scene.
+
+S2	vital	"One Thing Leads to Another" is performed by a band.
+S3	vital	"One Thing Leads to Another" is performed by the American rock band The Cars.
+S19	vital	The song helped to solidify The Fixx's presence in the 1980s music scene.
+S1	okay	"One Thing Leads to Another" is a song.
+S5	okay	It was released in 1983.
+S6	okay	It became one of their most popular hits.
+S7	okay	It became one of their most recognizable hits.
+S8	okay	It was featured on their album Reach the Beach.
+S17	okay	The song achieved significant success in the United States.
+S18	okay	The song reached the top 10 on the Billboard Hot 100 chart.
+S4	less-important	The Cars is an American rock band.
+S9	less-important	Reach the Beach is their album.
+S10	less-important	The track showcases the band's signature blend.
+S11	less-important	The band's signature blend includes synthesizers.
+S12	less-important	The band's signature blend includes guitar-driven melodies.
+S13	less-important	The track includes socially conscious lyrics.
+S14	less-important	The socially conscious lyrics are delivered by the lead vocalist.
+S15	less-important	Cy Curnin is the lead vocalist.
+S16	less-important	The socially conscious lyrics are delivered by Cy Curnin.
+S20	less-important	The Fixx had a presence in the 1980s music scene.

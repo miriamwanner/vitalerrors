@@ -1,0 +1,5 @@
+         Dataset                         Metric     Normal    Missing      Wrong
+0     Open-Ended      Any vital subclaims wrong  52.702880  45.478752  73.790396
+1     Open-Ended  Any vital nuggets unsupported  87.220382  91.175969  88.575464
+2  Single-Answer      Any vital subclaims wrong  45.033333  42.166667  89.533333
+3  Single-Answer  Any vital nuggets unsupported  54.300000  68.100000  68.466667

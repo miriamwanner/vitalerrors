@@ -1,0 +1,150 @@
+======================= NORMAL =======================
+S1	vital	Paul Hogan is the actor who played Crocodile Dundee.
+S2	okay	Paul Hogan is an Australian.
+S3	okay	Paul Hogan is a comedian.
+S4	okay	Paul Hogan is an actor.
+S5	okay	He gained international fame.
+S6	vital	He portrayed Michael "Crocodile" Dundee.
+S7	less-important	Michael "Crocodile" Dundee is a rugged and charming bushman.
+S8	vital	He portrayed Michael "Crocodile" Dundee in the film Crocodile Dundee.
+S9	less-important	Crocodile Dundee is a film.
+S10	less-important	Crocodile Dundee was released in 1986.
+S11	okay	He co-wrote Crocodile Dundee.
+S12	less-important	The film was a major box office success.
+S13	less-important	The film led to two sequels.
+S14	less-important	One sequel was Crocodile Dundee II.
+S15	less-important	Crocodile Dundee II was released in 1988.
+S16	less-important	Another sequel was Crocodile Dundee in Los Angeles.
+S17	less-important	Crocodile Dundee in Los Angeles was released in 2001.
+S18	okay	Hogan's performance became iconic.
+S19	okay	Hogan is widely associated with the character.
+S20	less-important	The character helped to popularize Australian culture around the world.
+S21	less-important	Hogan's association with the character contributed to the popularization of Australian culture globally.
+
+S1	vital	Paul Hogan is the actor who played Crocodile Dundee.
+S6	vital	He portrayed Michael "Crocodile" Dundee.
+S8	vital	He portrayed Michael "Crocodile" Dundee in the film Crocodile Dundee.
+S4	okay	Paul Hogan is an actor.
+S3	okay	Paul Hogan is a comedian.
+S2	okay	Paul Hogan is an Australian.
+S5	okay	He gained international fame.
+S18	okay	Hogan's performance became iconic.
+S19	okay	Hogan is widely associated with the character.
+S11	okay	He co-wrote Crocodile Dundee.
+S20	less-important	The character helped to popularize Australian culture around the world.
+S21	less-important	Hogan's association with the character contributed to the popularization of Australian culture globally.
+S7	less-important	Michael "Crocodile" Dundee is a rugged and charming bushman.
+S9	less-important	Crocodile Dundee is a film.
+S10	less-important	Crocodile Dundee was released in 1986.
+S12	less-important	The film was a major box office success.
+S13	less-important	The film led to two sequels.
+S14	less-important	One sequel was Crocodile Dundee II.
+S15	less-important	Crocodile Dundee II was released in 1988.
+S16	less-important	Another sequel was Crocodile Dundee in Los Angeles.
+S17	less-important	Crocodile Dundee in Los Angeles was released in 2001.
+
+======================= MISSING =======================
+S1	less-important	He is an Australian.
+S2	less-important	He is a comedian.
+S3	okay	He is an actor.
+S4	okay	He gained international fame for a portrayal.
+S5	vital	He portrayed Michael "Crocodile" Dundee.
+S6	less-important	Michael "Crocodile" Dundee is a rugged and charming bushman.
+S7	vital	He portrayed Michael "Crocodile" Dundee in the film Crocodile Dundee.
+S8	less-important	Crocodile Dundee was released in 1986.
+S9	less-important	He co-wrote the film Crocodile Dundee.
+S10	less-important	The film was a major box office success.
+S11	less-important	The film led to two sequels.
+S12	less-important	One sequel was Crocodile Dundee II.
+S13	less-important	Crocodile Dundee II was released in 1988.
+S14	less-important	Another sequel was Crocodile Dundee in Los Angeles.
+S15	less-important	Crocodile Dundee in Los Angeles was released in 2001.
+S16	okay	His performance became iconic.
+S17	okay	He is widely associated with the character.
+S18	less-important	The character helped to popularize Australian culture.
+S19	less-important	His association with the character helped to popularize Australian culture around the world.
+S20	less-important	Australian culture was popularized around the world.
+
+S5	vital	He portrayed Michael "Crocodile" Dundee.
+S7	vital	He portrayed Michael "Crocodile" Dundee in the film Crocodile Dundee.
+S3	okay	He is an actor.
+S4	okay	He gained international fame for a portrayal.
+S16	okay	His performance became iconic.
+S17	okay	He is widely associated with the character.
+S1	less-important	He is an Australian.
+S2	less-important	He is a comedian.
+S6	less-important	Michael "Crocodile" Dundee is a rugged and charming bushman.
+S8	less-important	Crocodile Dundee was released in 1986.
+S9	less-important	He co-wrote the film Crocodile Dundee.
+S10	less-important	The film was a major box office success.
+S11	less-important	The film led to two sequels.
+S12	less-important	One sequel was Crocodile Dundee II.
+S13	less-important	Crocodile Dundee II was released in 1988.
+S14	less-important	Another sequel was Crocodile Dundee in Los Angeles.
+S15	less-important	Crocodile Dundee in Los Angeles was released in 2001.
+S18	less-important	The character helped to popularize Australian culture.
+S19	less-important	His association with the character helped to popularize Australian culture around the world.
+S20	less-important	Australian culture was popularized around the world.
+
+======================= WRONG =======================
+S1	okay	The character Crocodile Dundee was played by an actor.
+S2	vital	The actor who played Crocodile Dundee was Mel Gibson.
+S3	less-important	Mel Gibson is Australian.
+S4	less-important	Mel Gibson is a comedian.
+S5	okay	Mel Gibson is an actor.
+
+Note: The statement "The actor who played Crocodile Dundee was Mel Gibson" is factually incorrect. The role of Crocodile Dundee was played by Paul Hogan, not Mel Gibson. If you intended to refer to the correct actor, the revised facts would be:.
+S6	okay	The character Crocodile Dundee was played by an actor.
+S7	vital	The actor who played Crocodile Dundee was Paul Hogan.
+S8	less-important	Paul Hogan is Australian.
+S9	less-important	Paul Hogan is a comedian.
+S10	okay	Paul Hogan is an actor.
+S11	less-important	He gained international fame.
+S12	okay	He gained international fame for his portrayal of Michael "Crocodile" Dundee.
+S13	less-important	Michael "Crocodile" Dundee is a rugged and charming bushman.
+S14	vital	He portrayed Michael "Crocodile" Dundee.
+S15	vital	His portrayal of Michael "Crocodile" Dundee was in the film Crocodile Dundee.
+S16	less-important	Crocodile Dundee is a film.
+S17	less-important	Crocodile Dundee was released in 1986.
+S18	less-important	He co-wrote the film Crocodile Dundee.
+S19	less-important	The film was a major box office success.
+S20	less-important	The film led to two sequels.
+S21	less-important	One sequel is Crocodile Dundee II.
+S22	less-important	Crocodile Dundee II was released in 1988.
+S23	less-important	Another sequel is Crocodile Dundee in Los Angeles.
+S24	less-important	Crocodile Dundee in Los Angeles was released in 2001.
+S25	okay	Hogan's performance became iconic.
+S26	okay	Hogan is widely associated with the character.
+S27	less-important	The character helped to popularize Australian culture.
+S28	less-important	The character helped to popularize Australian culture around the world.
+
+S2	vital	The actor who played Crocodile Dundee was Mel Gibson.
+S7	vital	The actor who played Crocodile Dundee was Paul Hogan.
+S14	vital	He portrayed Michael "Crocodile" Dundee.
+S15	vital	His portrayal of Michael "Crocodile" Dundee was in the film Crocodile Dundee.
+S1	okay	The character Crocodile Dundee was played by an actor.
+S6	okay	The character Crocodile Dundee was played by an actor.
+S5	okay	Mel Gibson is an actor.
+
+Note: The statement "The actor who played Crocodile Dundee was Mel Gibson" is factually incorrect. The role of Crocodile Dundee was played by Paul Hogan, not Mel Gibson. If you intended to refer to the correct actor, the revised facts would be:.
+S10	okay	Paul Hogan is an actor.
+S12	okay	He gained international fame for his portrayal of Michael "Crocodile" Dundee.
+S25	okay	Hogan's performance became iconic.
+S26	okay	Hogan is widely associated with the character.
+S3	less-important	Mel Gibson is Australian.
+S4	less-important	Mel Gibson is a comedian.
+S8	less-important	Paul Hogan is Australian.
+S9	less-important	Paul Hogan is a comedian.
+S11	less-important	He gained international fame.
+S13	less-important	Michael "Crocodile" Dundee is a rugged and charming bushman.
+S16	less-important	Crocodile Dundee is a film.
+S17	less-important	Crocodile Dundee was released in 1986.
+S18	less-important	He co-wrote the film Crocodile Dundee.
+S19	less-important	The film was a major box office success.
+S20	less-important	The film led to two sequels.
+S21	less-important	One sequel is Crocodile Dundee II.
+S22	less-important	Crocodile Dundee II was released in 1988.
+S23	less-important	Another sequel is Crocodile Dundee in Los Angeles.
+S24	less-important	Crocodile Dundee in Los Angeles was released in 2001.
+S27	less-important	The character helped to popularize Australian culture.
+S28	less-important	The character helped to popularize Australian culture around the world.

@@ -1,0 +1,124 @@
+======================= NORMAL =======================
+S1	less-important	"I Wanna Dance with Somebody (Who Loves Me)" is a song.
+S2	vital	"I Wanna Dance with Somebody (Who Loves Me)" was written by George Merrill.
+S3	vital	"I Wanna Dance with Somebody (Who Loves Me)" was written by Shannon Rubicam.
+S4	okay	George Merrill is a songwriter.
+S5	okay	Shannon Rubicam is a songwriter.
+S6	okay	The duo performed together as the pop group Boy Meets Girl.
+S7	okay	The duo wrote (penned) the song specifically for Whitney Houston.
+S8	less-important	Boy Meets Girl is a pop group.
+S9	less-important	Whitney Houston is a singer (artist).
+S10	less-important	The track was released in 1987.
+S11	less-important	The track was the lead single from her second studio album.
+S12	less-important	Her second studio album is titled "Whitney.".
+S13	less-important	The track is from the album "Whitney.".
+S14	less-important	The track became one of Houston's most iconic hits.
+S15	less-important	The track was released as the lead single from "Whitney" in 1987.
+S16	less-important	The song has an upbeat tempo.
+S17	less-important	The song has an infectious melody.
+S18	less-important	The song features Houston's powerful vocals.
+S19	less-important	The combination of the song's upbeat tempo, infectious melody, and Houston's powerful vocals contributed to its success.
+S20	less-important	The song reached the top of the charts worldwide.
+S21	less-important	The success of the song helped solidify Houston's status as a global pop superstar.
+S22	less-important	Houston is a global pop superstar.
+
+S2	vital	"I Wanna Dance with Somebody (Who Loves Me)" was written by George Merrill.
+S3	vital	"I Wanna Dance with Somebody (Who Loves Me)" was written by Shannon Rubicam.
+S7	okay	The duo wrote (penned) the song specifically for Whitney Houston.
+S4	okay	George Merrill is a songwriter.
+S5	okay	Shannon Rubicam is a songwriter.
+S6	okay	The duo performed together as the pop group Boy Meets Girl.
+S1	less-important	"I Wanna Dance with Somebody (Who Loves Me)" is a song.
+S8	less-important	Boy Meets Girl is a pop group.
+S9	less-important	Whitney Houston is a singer (artist).
+S10	less-important	The track was released in 1987.
+S11	less-important	The track was the lead single from her second studio album.
+S12	less-important	Her second studio album is titled "Whitney.".
+S13	less-important	The track is from the album "Whitney.".
+S14	less-important	The track became one of Houston's most iconic hits.
+S15	less-important	The track was released as the lead single from "Whitney" in 1987.
+S16	less-important	The song has an upbeat tempo.
+S17	less-important	The song has an infectious melody.
+S18	less-important	The song features Houston's powerful vocals.
+S19	less-important	The combination of the song's upbeat tempo, infectious melody, and Houston's powerful vocals contributed to its success.
+S20	less-important	The song reached the top of the charts worldwide.
+S21	less-important	The success of the song helped solidify Houston's status as a global pop superstar.
+S22	less-important	Houston is a global pop superstar.
+
+======================= MISSING =======================
+S1	okay	The track was released in 1987.
+S2	okay	The track was the lead single from her second studio album.
+S3	okay	Her second studio album is titled "Whitney.".
+S4	okay	The track is from the album "Whitney.".
+S5	okay	The track became one of Houston's most iconic hits.
+S6	less-important	Houston has multiple iconic hits.
+S7	less-important	The song has an upbeat tempo.
+S8	less-important	The song has an infectious melody.
+S9	less-important	The song features Houston's powerful vocals.
+S10	less-important	The upbeat tempo, infectious melody, and Houston's powerful vocals helped propel the song to the top of the charts worldwide.
+S11	okay	The song reached the top of the charts worldwide.
+S12	okay	The song helped solidify Houston's status as a global pop superstar.
+S13	less-important	Houston is a global pop superstar.
+
+S1	okay	The track was released in 1987.
+S2	okay	The track was the lead single from her second studio album.
+S4	okay	The track is from the album "Whitney.".
+S3	okay	Her second studio album is titled "Whitney.".
+S5	okay	The track became one of Houston's most iconic hits.
+S11	okay	The song reached the top of the charts worldwide.
+S12	okay	The song helped solidify Houston's status as a global pop superstar.
+S6	less-important	Houston has multiple iconic hits.
+S7	less-important	The song has an upbeat tempo.
+S8	less-important	The song has an infectious melody.
+S9	less-important	The song features Houston's powerful vocals.
+S10	less-important	The upbeat tempo, infectious melody, and Houston's powerful vocals helped propel the song to the top of the charts worldwide.
+S13	less-important	Houston is a global pop superstar.
+
+======================= WRONG =======================
+S1	less-important	"I Wanna Dance with Somebody (Who Loves Me)" is a song.
+S2	vital	"I Wanna Dance with Somebody (Who Loves Me)" was written by Diane Warren.
+S3	vital	"I Wanna Dance with Somebody (Who Loves Me)" was written by David Foster.
+S4	okay	Diane Warren is a songwriter.
+S5	okay	David Foster is a songwriter.
+S6	okay	The duo performed together.
+S7	okay	The duo performed together as the pop group Boy Meets Girl.
+S8	vital	The duo penned the song.
+S9	vital	The duo penned the song specifically for Whitney Houston.
+S10	less-important	Boy Meets Girl is a pop group.
+S11	less-important	Whitney Houston is a singer.
+S12	less-important	The track was released in 1987.
+S13	less-important	The track was the lead single from her second studio album.
+S14	less-important	Her second studio album is titled "Whitney.".
+S15	less-important	The track was released as the lead single from the album "Whitney.".
+S16	less-important	The track became one of Houston's most iconic hits.
+S17	less-important	Houston had a second studio album titled "Whitney.".
+S18	less-important	The song has an upbeat tempo.
+S19	less-important	The song has an infectious melody.
+S20	less-important	The song features Houston's powerful vocals.
+S21	less-important	The combination of the song's upbeat tempo, infectious melody, and Houston's powerful vocals contributed to its success.
+S22	less-important	The song reached the top of the charts worldwide.
+S23	less-important	The song's success helped solidify Houston's status as a global pop superstar.
+
+S2	vital	"I Wanna Dance with Somebody (Who Loves Me)" was written by Diane Warren.
+S3	vital	"I Wanna Dance with Somebody (Who Loves Me)" was written by David Foster.
+S8	vital	The duo penned the song.
+S9	vital	The duo penned the song specifically for Whitney Houston.
+S4	okay	Diane Warren is a songwriter.
+S5	okay	David Foster is a songwriter.
+S6	okay	The duo performed together.
+S7	okay	The duo performed together as the pop group Boy Meets Girl.
+S10	less-important	Boy Meets Girl is a pop group.
+S1	less-important	"I Wanna Dance with Somebody (Who Loves Me)" is a song.
+S11	less-important	Whitney Houston is a singer.
+S12	less-important	The track was released in 1987.
+S13	less-important	The track was the lead single from her second studio album.
+S14	less-important	Her second studio album is titled "Whitney.".
+S15	less-important	The track was released as the lead single from the album "Whitney.".
+S16	less-important	The track became one of Houston's most iconic hits.
+S17	less-important	Houston had a second studio album titled "Whitney.".
+S18	less-important	The song has an upbeat tempo.
+S19	less-important	The song has an infectious melody.
+S20	less-important	The song features Houston's powerful vocals.
+S21	less-important	The combination of the song's upbeat tempo, infectious melody, and Houston's powerful vocals contributed to its success.
+S22	less-important	The song reached the top of the charts worldwide.
+S23	less-important	The song's success helped solidify Houston's status as a global pop superstar.

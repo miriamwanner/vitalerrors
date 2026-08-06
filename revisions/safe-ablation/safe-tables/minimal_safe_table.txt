@@ -1,0 +1,4 @@
+ prompt  factscore  safe-recall  safe-k  safe-f1  vital-precision  vital-recall  any-vital-wrong  any-vital-nuggets-unsupported
+missing     0.8332       0.7852 18.7105   0.7984           0.7952        0.5669           0.4443                         0.8389
+ normal     0.8329       0.8034 26.6316   0.8130           0.7957        0.6586           0.5028                         0.7682
+  wrong     0.7814       0.7707 26.3684   0.7710           0.6698        0.6065           0.7876                         0.8221

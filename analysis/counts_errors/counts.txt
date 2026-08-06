@@ -1,0 +1,15 @@
+          Dataset Metric Group Metric Normal Missing  Wrong
+0      Open-Ended    Subclaims  vital  11.34    8.13  11.66
+1      Open-Ended    Subclaims   okay  11.37    7.60  10.96
+2      Open-Ended    Subclaims   less   6.34    4.23   6.47
+3      Open-Ended    Subclaims  TOTAL  29.04   19.96  29.09
+4      Open-Ended      Nuggets  vital   9.84    9.84   9.84
+5      Open-Ended      Nuggets   okay  14.37   14.37  14.37
+6      Open-Ended      Nuggets  TOTAL  24.21   24.21  24.21
+7   Single-Answer    Subclaims  vital   4.31    3.59   4.64
+8   Single-Answer    Subclaims   okay   7.69    6.49   7.81
+9   Single-Answer    Subclaims   less  10.36    6.83   9.84
+10  Single-Answer    Subclaims  TOTAL  22.36   16.90  22.29
+11  Single-Answer      Nuggets  vital   3.13    3.13   3.13
+12  Single-Answer      Nuggets   okay   9.00    9.00   9.00
+13  Single-Answer      Nuggets  TOTAL  12.13   12.13  12.13

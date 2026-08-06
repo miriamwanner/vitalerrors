@@ -1,0 +1,13 @@
+{
+    "query": "query",
+    "response": {
+        "id": "number",
+        "text": "text"
+    },
+    "documents": [
+        {
+            "id": "number",
+            "text": "text"
+        }
+    ]
+}

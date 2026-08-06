@@ -1,0 +1,19 @@
+dataset  prompt  factscore  safe-recall  safe-k  safe-f1
+            bright missing     0.7475       0.7208 17.0714   0.7194
+            bright  normal     0.7454       0.7296 25.7143   0.7309
+            bright   wrong     0.6901       0.6906 25.4286   0.6841
+         factscore missing     0.8598       0.8183 21.0000   0.8326
+         factscore  normal     0.8716       0.8307 32.0000   0.8469
+         factscore   wrong     0.8413       0.8252 31.0000   0.8297
+          hotpotqa missing     0.6885       0.6610 15.5000   0.6639
+          hotpotqa  normal     0.6848       0.6706 20.5000   0.6707
+          hotpotqa   wrong     0.6322       0.6369 20.0000   0.6276
+  naturalquestions missing     0.8712       0.8068 17.0000   0.8297
+  naturalquestions  normal     0.8648       0.8337 23.0000   0.8443
+  naturalquestions   wrong     0.8061       0.8007 22.5000   0.7982
+          triviaqa missing     0.9227       0.8531 18.0000   0.8798
+          triviaqa  normal     0.9278       0.8768 22.5000   0.8977
+          triviaqa   wrong     0.8606       0.8446 22.0000   0.8478
+wildhallucinations missing     0.9546       0.8825 22.8000   0.9109
+wildhallucinations  normal     0.9562       0.9131 32.4000   0.9318
+wildhallucinations   wrong     0.9155       0.8840 32.6000   0.8966

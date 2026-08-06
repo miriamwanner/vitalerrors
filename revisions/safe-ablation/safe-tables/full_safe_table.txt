@@ -1,0 +1,58 @@
+           dataset             subset  prompt  factscore  safe-recall  safe-k  safe-f1
+          hotpotqa              val_1  normal     0.6817       0.6792    20.0   0.6737
+          hotpotqa              val_1 missing     0.6836       0.6460    16.0   0.6535
+          hotpotqa              val_1   wrong     0.6308       0.6352    20.0   0.6261
+          hotpotqa              val_2  normal     0.6878       0.6620    21.0   0.6676
+          hotpotqa              val_2 missing     0.6934       0.6759    15.0   0.6743
+          hotpotqa              val_2   wrong     0.6337       0.6386    20.0   0.6291
+  naturalquestions              val_1  normal     0.8703       0.8451    23.0   0.8527
+  naturalquestions              val_1 missing     0.8740       0.8152    17.0   0.8355
+  naturalquestions              val_1   wrong     0.8126       0.8026    23.0   0.8020
+  naturalquestions              val_2  normal     0.8593       0.8224    23.0   0.8359
+  naturalquestions              val_2 missing     0.8685       0.7985    17.0   0.8239
+  naturalquestions              val_2   wrong     0.7995       0.7987    22.0   0.7944
+          triviaqa               rc_1  normal     0.9298       0.8695    23.0   0.8945
+          triviaqa               rc_1 missing     0.9210       0.8592    18.0   0.8823
+          triviaqa               rc_1   wrong     0.8629       0.8488    22.0   0.8515
+          triviaqa               rc_2  normal     0.9259       0.8841    22.0   0.9009
+          triviaqa               rc_2 missing     0.9245       0.8469    18.0   0.8773
+          triviaqa               rc_2   wrong     0.8584       0.8403    22.0   0.8442
+            bright            biology  normal     0.8206       0.8047    25.0   0.8072
+            bright            biology missing     0.8118       0.8035    17.0   0.7997
+            bright            biology   wrong     0.7442       0.7390    25.0   0.7360
+            bright      earth_science  normal     0.8360       0.8190    24.0   0.8222
+            bright      earth_science missing     0.8414       0.7658    17.5   0.7862
+            bright      earth_science   wrong     0.7779       0.7672    24.0   0.7666
+            bright          economics  normal     0.7277       0.6936    27.0   0.7041
+            bright          economics missing     0.7453       0.7025    17.0   0.7076
+            bright          economics   wrong     0.6841       0.6777    26.0   0.6755
+            bright         psychology  normal     0.8321       0.7952    25.0   0.8053
+            bright         psychology missing     0.8135       0.7659    17.0   0.7753
+            bright         psychology   wrong     0.7553       0.7686    24.0   0.7548
+            bright           robotics  normal     0.6782       0.6740    27.0   0.6703
+            bright           robotics missing     0.6771       0.6744    18.0   0.6611
+            bright           robotics   wrong     0.6429       0.6436    27.0   0.6380
+            bright      stackoverflow  normal     0.5982       0.6058    25.0   0.5948
+            bright      stackoverflow missing     0.6163       0.6188    15.0   0.5986
+            bright      stackoverflow   wrong     0.5628       0.5733    25.0   0.5601
+            bright sustainable_living  normal     0.7247       0.7150    27.0   0.7121
+            bright sustainable_living missing     0.7269       0.7150    18.0   0.7076
+            bright sustainable_living   wrong     0.6633       0.6650    27.0   0.6574
+wildhallucinations         cult_ent_1  normal     0.9671       0.9184    33.0   0.9398
+wildhallucinations         cult_ent_1 missing     0.9640       0.8857    23.0   0.9173
+wildhallucinations         cult_ent_1   wrong     0.9248       0.8908    33.0   0.9047
+wildhallucinations         cult_ent_2  normal     0.9641       0.9277    32.0   0.9435
+wildhallucinations         cult_ent_2 missing     0.9649       0.8979    23.0   0.9251
+wildhallucinations         cult_ent_2   wrong     0.9237       0.8861    33.0   0.9015
+wildhallucinations         cult_ent_3  normal     0.9546       0.9073    33.0   0.9280
+wildhallucinations         cult_ent_3 missing     0.9533       0.8748    23.0   0.9060
+wildhallucinations         cult_ent_3   wrong     0.9147       0.8803    33.0   0.8944
+wildhallucinations         cult_ent_4  normal     0.9514       0.9012    33.0   0.9231
+wildhallucinations         cult_ent_4 missing     0.9491       0.8825    23.0   0.9082
+wildhallucinations         cult_ent_4   wrong     0.9113       0.8811    33.0   0.8931
+wildhallucinations         geographic  normal     0.9439       0.9106    31.0   0.9247
+wildhallucinations         geographic missing     0.9416       0.8715    22.0   0.8981
+wildhallucinations         geographic   wrong     0.9030       0.8819    31.0   0.8894
+         factscore               bios  normal     0.8716       0.8307    32.0   0.8469
+         factscore               bios missing     0.8598       0.8183    21.0   0.8326
+         factscore               bios   wrong     0.8413       0.8252    31.0   0.8297

@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.cache/
+.DS_Store
+*.egg-info/
+
+# VITALERRORS dataset (~880MB) -- too large for a normal git repo / exceeds
+# GitHub's file-size limits. Hosted separately -- see data/README.md.
+/data/
