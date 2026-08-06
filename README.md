@@ -121,10 +121,13 @@ recall/F1 computed from the FactScore decomposition) into one table.
 ## Citation
 
 ```bibtex
-@article{wanner2025claims,
-  title={All Claims Are Equal, but Some Claims Are More Equal Than Others: Importance-Sensitive Factuality Evaluation of LLM Generations},
-  author={Wanner, Miriam and Azzopardi, Leif and Thomas, Paul and Dan, Soham and Van Durme, Benjamin and Craswell, Nick},
-  journal={arXiv preprint arXiv:2510.07083},
-  year={2025}
+@misc{wanner2025claimsequalclaimsequal,
+      title={All Claims Are Equal, but Some Claims Are More Equal Than Others: Importance-Sensitive Factuality Evaluation of LLM Generations}, 
+      author={Miriam Wanner and Leif Azzopardi and Paul Thomas and Soham Dan and Benjamin Van Durme and Nick Craswell},
+      year={2025},
+      eprint={2510.07083},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2510.07083}, 
 }
 ```
