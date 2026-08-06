@@ -7,9 +7,7 @@ calls).
 
 ## Download
 
-This directory (~880MB) is not tracked in git. Download it from:
-
-**[PLACEHOLDER: data download link]**
+This directory (~880MB) is not tracked in git. Download it from **[this link](https://drive.google.com/drive/folders/1SJNMu8Al6uFj11FV1S8TcUTpytl0iPmt?usp=sharing)**.
 
 and extract it so this file ends up at `data/README.md` relative to the repo
 root (i.e. extract directly into the repo root, or extract elsewhere and move
