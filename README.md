@@ -24,7 +24,7 @@ export OPENAI_API_KEY=sk-...
 ```
 
 `data/` (~880MB) is not tracked in this git repo — download it separately from
-**[PLACEHOLDER: data download link]** and extract it to `data/` at the repo
+**[this link](https://drive.google.com/drive/folders/1SJNMu8Al6uFj11FV1S8TcUTpytl0iPmt?usp=sharing)** and extract it to `data/` at the repo
 root. See [`data/README.md`](data/README.md) for the full layout.
 
 All scripts are invoked as modules from the repo root (`python -m package.script ...`),
